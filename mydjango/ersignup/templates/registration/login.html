@@ -1,0 +1,50 @@
+{% load staticfiles %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:align="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Login | EasyReturns</title>
+
+		{% include 'head.html' %}
+
+
+	</head>
+	<body>
+
+		<!-- Header -->
+			{% include 'header.html'%}
+
+		<!-- Main -->
+			<section id="main" class="container 75%">
+					<h1>Login</h1><br>
+				<div class="box">
+					{% block content %}
+
+					<form method="post" action=".">
+					  {% csrf_token %}
+					  {{ form|crispy }}
+
+					  <input align="center" type="submit" value="{% trans 'Submit' %}" />
+
+					  <input type="hidden" name="next" value="{{ next }}" />
+					</form>
+
+					<hr/>
+
+					<p align="center">{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a>!</p>
+					<p align="center">{% trans "Not member" %}? <a href="{% url 'registration_register' %}">{% trans "Register" %}</a>!</p>
+					{% endblock %}
+				</div>
+			</section>
+
+		<!-- Footer -->
+			{% include 'footer.html'%}
+
+	</body>
+</html>
+
+
+

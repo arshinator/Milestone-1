@@ -1,0 +1,33 @@
+{% load staticfiles %}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:align="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>DashBoard | EasyReturns</title>
+
+		{% include 'head.html' %}
+
+
+	</head>
+	<body>
+
+		<!-- Header -->
+			{% include 'header.html'%}
+
+		<!-- Main -->
+			<section id="main" class="container 75%">
+				<header>
+					<h2>DashBoard</h2>
+					<p>Upload you documents here!</p>
+				</header>
+				<div class="box"><center>
+					<form  action="#" method="post"  enctype="multipart/form-data">{% csrf_token %}
+                        <input type="file" name="filetoupload" > <input type=submit />
+					</form>
+                    </center></div>
+			</section>
+
+		<!-- Footer -->
+			{% include 'footer.html'%}
+
+	</body>
+</html>

@@ -1,0 +1,40 @@
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:align="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Contact Us</title>
+
+		{% include 'head.html' %}
+
+	</head>
+	<body>
+
+		<!-- Header -->
+			{% include 'header.html'%}
+
+		<!-- Main -->
+			<section id="main" class="container 75%">
+                    <header>
+                        <h2>Register</h2>
+                        <p>Instant Karma Fill up the Registration form</p>
+                    </header>
+
+                    <!--<div class="box">-->
+
+                        <form method="post" action=".">{% csrf_token %}
+                          {{ form|crispy }}
+                          <input type="submit" value="{% trans 'Register' %}" />
+                        </form>
+                        <hr/>
+                        <p>Need to <a href="{% url 'auth_login' %}">Login</a>?</p>
+
+                    <!--</div>-->
+			</section>
+
+		<!-- Footer -->
+			{% include 'footer.html'%}
+
+	</body>
+</html>

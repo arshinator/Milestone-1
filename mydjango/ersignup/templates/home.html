@@ -1,0 +1,60 @@
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+<html xmlns="http://www.w3.org/1999/html">
+
+    <head>
+
+        <title>{% block head_title %}{% endblock %} Easy Returns</title>
+        <style>
+                {% block style %}
+                    .lead{
+                            text-align: centre;
+                        }
+                {% endblock %}
+        </style>
+        {% include 'head.html' %}
+    </head>
+
+
+    <body>
+
+
+    <!-- Header -->
+        {% include 'header.html' %}
+
+		<!-- Main -->
+        <section id="main" class="container 75%">
+                <p class="lead">
+                   {{ title }}  {{ user }}
+                    </br>
+                    SignUp Page
+                </p>
+            <div class="box">
+                {% block content %}
+                <html>
+                        <body>
+                            <div class="row">
+                                    <!--<div class="container-fluid">-->
+                                        <!-- <div class="col-sm-6 col-md-4"> -->
+                                        <div class="col-sm-3 pull-right">
+
+                                            <form method="POST" action="#"> {% csrf_token %}
+                                                {{form|crispy}}
+                                                <input class="btn btn-primary" type ="submit" value="signup">
+                                            </form>
+                                        </div>
+                            <!--</div>-->
+
+                            </div>
+                        </body>
+                </html>
+                {% endblock %}
+            </div>
+        </section>
+
+    <!-- Footer -->
+        {% include 'footer.html' %}
+
+    </body>
+</html>

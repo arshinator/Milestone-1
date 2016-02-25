@@ -1,0 +1,35 @@
+{% load staticfiles %}
+{% load i18n %}
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:align="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Failed | EasyReturns</title>
+
+		{% include 'head.html' %}
+
+
+	</head>
+	<body>
+
+		<!-- Header -->
+			{% include 'header.html'%}
+
+		<!-- Main -->
+			<section id="main" class="container 75%">
+
+				<div class="box">
+					{% block content %}
+                        <p align="center">{% trans "Account activation failed" %}</p>
+                    {% endblock %}
+				</div>
+			</section>
+
+		<!-- Footer -->
+			{% include 'footer.html'%}
+
+	</body>
+</html>
+
+
+

@@ -1,0 +1,122 @@
+{% load staticfiles %}
+
+<!--
+	Beta by Dsignwares
+	EasyReturns
+-->
+<html>
+	<head>
+		<title>{% block head_title %}{% endblock %} Easy Returns</title>
+
+	{% include 'head.html' %}
+
+	</head>
+	<body class="landing">
+
+		<!-- Header -->
+			{% include 'header.html' %}
+
+		<!-- Banner -->
+			<section id="banner">
+				<h2>Easy Returns</h2>
+				<p>File your Income Tax Returns with a click</p>
+
+				{% if request.user.is_authenticated %}
+					<ul class="actions">
+						<li><a align="center" href="{% url 'dash'%}" class="button special">DashBoard</a></li>
+					</ul>
+				{% else %}
+					<ul class="actions">
+                    	<li><a href="{% url 'auth_login' %}" class="button special">Sign Up</a></li>
+						<li><a href="{% url 'about'%}" class="button">Learn More</a></li>
+					</ul>
+				{% endif %}
+
+			</section>
+
+		<!-- Main -->
+			<section id="main" class="container">
+
+				<section class="box special">
+					<header class="major">
+						<h2>File your income tax report
+						<br />
+							in less than a minute</h2>
+						<p></p>
+					</header>
+					<span class="image featured"><img src="{% static 'images/pic01.jpg' %} " alt="" /></span>
+				</section>
+
+				<section class="box special features">
+					<div class="features-row">
+						<section>
+							<span class="icon major fa-bolt accent2"></span>
+							<h3>Easy</h3>
+							<p>Just register with your PAN and upload your file in Dashboard.Supported file formats are Pdfs and documents</p>
+						</section>
+						<section>
+							<span class="icon major fa-area-chart accent3"></span>
+							<h3>Quick</h3>
+							<p>Click on Submit Button to file your income tax report</p>
+						</section>
+					</div>
+					<div class="features-row">
+						<section>
+							<span class="icon major fa-cloud accent4"></span>
+							<h3>Data Stored on cloud</h3>
+							<p>All your files will be stored on clouds</p>
+						</section>
+						<section>
+							<span class="icon major fa-lock accent5"></span>
+							<h3>Secure</h3>
+							<p>All you data is safe and secure with us.</p>
+						</section>
+					</div>
+				</section>
+                      <div class="row">
+						<div class="6u 12u(narrower)">
+
+							<section class="box special">
+								<span class="image featured"><img src="{% static 'images/pic06.jpg' %} " alt="" /></span>
+				                <h3>Blog</h3>
+								<p>Blog data</p>
+								<ul class="actions">
+									<li><a href="#" class="button alt">Learn More</a></li>
+								</ul>
+
+							</section>
+
+						</div>
+						<div class="6u 12u(narrower)">
+
+							<section class="box special">
+								<span class="image featured"><img src="{% static 'images/pic07.jpg' %} " alt="" /></span>
+								<h3>Blog</h3>
+								<p>Blog data</p>
+								<ul class="actions">
+									<li><a href="#" class="button alt">Learn More</a></li>
+								</ul>
+
+							</section>
+
+						</div>
+					</div>
+			</section>
+
+		<!-- CTA -->
+			<section id="cta">
+
+				<h2>
+				<a href="signup.html">Sign up for beta access</a>
+				</h2>
+				<p></p>
+
+
+
+			</section>
+
+		<!-- Footer -->
+			{% include 'footer.html' %}
+
+	</body>
+</html>

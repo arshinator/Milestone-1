@@ -1,0 +1,40 @@
+{% load staticfiles %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:align="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Logout | EasyReturns</title>
+
+		{% include 'head.html' %}
+
+
+	</head>
+	<body>
+
+		<!-- Header -->
+			{% include 'header.html'%}
+
+		<!-- Main -->
+			<section id="main" class="container 75%">
+
+				<div class="box">
+
+                    {% block content %}
+                    <p align="center" class='text-align-center lead'>You have successfully logged out.</p>
+                    <p align="center" class='text-align-center lead'><a href="{% url 'auth_login' %}">Login</a></p>
+                    {% endblock %}
+				</div>
+			</section>
+
+		<!-- Footer -->
+			{% include 'footer.html'%}
+
+	</body>
+</html>
+
+
+
+
